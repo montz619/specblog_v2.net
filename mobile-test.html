@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200, initial-scale=1.0, user-scalable=yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#2563eb">
+    <title>Mobile Test - SpecBlog.net</title>
+    <link rel="stylesheet" href="assets/style-clean.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .mobile-test {
+            background: #f8f9fa;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 1rem;
+            border-left: 4px solid #2563eb;
+        }
+        .test-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .test-item {
+            background: white;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .test-button {
+            background: #2563eb;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            margin: 0.5rem;
+            cursor: pointer;
+            min-height: 44px;
+            min-width: 44px;
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-indicator {
+                background: #10b981;
+                color: white;
+                padding: 0.5rem 1rem;
+                border-radius: 0.25rem;
+                display: inline-block;
+                margin: 1rem 0;
+            }
+        }
+        @media (min-width: 769px) {
+            .desktop-indicator {
+                background: #f59e0b;
+                color: white;
+                padding: 0.5rem 1rem;
+                border-radius: 0.25rem;
+                display: inline-block;
+                margin: 1rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1>SpecBlog<span>.net</span></h1>
+                <p class="tagline">Mobile Test Page</p>
+            </div>
+            <nav>
+                <button class="nav-toggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="pages/mobile-phones.html" class="nav-link">Mobile Phones</a></li>
+                    <li><a href="pages/tablets.html" class="nav-link">Tablets</a></li>
+                    <li><a href="pages/laptops.html" class="nav-link">Laptops</a></li>
+                    <li><a href="pages/about-us.html" class="nav-link">About Us</a></li>
+                    <li><a href="pages/contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="mobile-test">
+                <h2>Mobile Responsiveness Test</h2>
+                <div class="mobile-indicator" style="display: none;">✅ Mobile View Active</div>
+                <div class="desktop-indicator" style="display: none;">🖥️ Desktop View Active</div>
+                
+                <p>This page tests the mobile responsiveness of SpecBlog.net. Try the following:</p>
+                
+                <div class="test-grid">
+                    <div class="test-item">
+                        <h4>Navigation Test</h4>
+                        <p>On mobile: Tap the hamburger menu (≡) to open/close navigation</p>
+                        <button class="test-button" onclick="document.querySelector('.nav-toggle').click()">Test Menu</button>
+                    </div>
+                    
+                    <div class="test-item">
+                        <h4>Touch Targets</h4>
+                        <p>All buttons should be at least 44px for easy tapping</p>
+                        <button class="test-button">Tap Me</button>
+                        <button class="test-button">And Me</button>
+                    </div>
+                    
+                    <div class="test-item">
+                        <h4>Responsive Grid</h4>
+                        <p>This grid should stack on mobile and be side-by-side on desktop</p>
+                        <button class="test-button">Grid Item</button>
+                    </div>
+                    
+                    <div class="test-item">
+                        <h4>Mobile Performance Test</h4>
+                        <p>Test mobile touch interactions and responsiveness</p>
+                        <button class="test-button" onclick="window.location.reload()">Reload Page</button>
+                    </div>
+                    
+                    <div class="test-item">
+                        <h4>Mobile Layout Elements</h4>
+                        <p>Test mobile-specific layout components</p>
+                        <div style="background: #f8f9fa; color: #212529; padding: 0.5rem; border-radius: 0.25rem; margin: 0.5rem 0; border: 1px solid #dee2e6;">
+                            Sample card element
+                        </div>
+                        <div style="background: var(--bg-tertiary, #374151); color: var(--text-secondary, #d1d5db); padding: 0.5rem; border-radius: 0.25rem; margin: 0.5rem 0;">
+                            Sample dark table header
+                        </div>
+                    </div>
+                    
+                    <div class="test-item">
+                        <h4>Text Readability</h4>
+                        <p>Text should be at least 16px and have good contrast. Line height should be 1.4-1.6 for readability.</p>
+                        <div style="font-size: 14px; margin: 0.5rem 0;">14px text (too small for mobile)</div>
+                        <div style="font-size: 16px; margin: 0.5rem 0;">16px text (good for mobile)</div>
+                        <div style="font-size: 18px; margin: 0.5rem 0;">18px text (optimal for mobile)</div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 2rem;">
+                    <h4>Screen Size Info:</h4>
+                    <p id="screen-info">Loading...</p>
+                </div>
+            </section>
+
+            <section id="gadget-specs-content">
+                <h3>Sample Specifications Table (Mobile Test)</h3>
+                <table class="specs-table">
+                    <tr>
+                        <th>Display</th>
+                        <td data-label="Display">6.1" OLED Super Retina XDR</td>
+                    </tr>
+                    <tr>
+                        <th>Processor</th>
+                        <td data-label="Processor">A17 Pro chip</td>
+                    </tr>
+                    <tr>
+                        <th>Camera</th>
+                        <td data-label="Camera">48MP Main + 12MP Ultra Wide</td>
+                    </tr>
+                    <tr>
+                        <th>Battery</th>
+                        <td data-label="Battery">Up to 22 hours video playback</td>
+                    </tr>
+                </table>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>SpecBlog.net</h4>
+                <p>Testing mobile responsiveness.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Test Links</h4>
+                <ul>
+                    <li><a href="index.html">Back to Home</a></li>
+                    <li><a href="pages/mobile-phones.html">Mobile Phones</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 SpecBlog.net. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/script.js"></script>
+    <script>
+        // Display screen information
+        function updateScreenInfo() {
+            const info = document.getElementById('screen-info');
+            if (info) {
+                info.innerHTML = `
+                    Screen: ${window.screen.width}×${window.screen.height}<br>
+                    Viewport: ${window.innerWidth}×${window.innerHeight}<br>
+                    Device Pixel Ratio: ${window.devicePixelRatio}<br>
+                    Touch Support: ${('ontouchstart' in window) ? 'Yes' : 'No'}<br>
+                    User Agent: ${navigator.userAgent.substring(0, 50)}...
+                `;
+            }
+        }
+        
+        // Update on load and resize
+        updateScreenInfo();
+        window.addEventListener('resize', updateScreenInfo);
+        window.addEventListener('orientationchange', () => {
+            setTimeout(updateScreenInfo, 100);
+        });
+        
+        // Show appropriate indicator
+        function showIndicator() {
+            const mobile = document.querySelector('.mobile-indicator');
+            const desktop = document.querySelector('.desktop-indicator');
+            
+            if (window.innerWidth <= 768) {
+                mobile.style.display = 'inline-block';
+                desktop.style.display = 'none';
+            } else {
+                mobile.style.display = 'none';
+                desktop.style.display = 'inline-block';
+            }
+        }
+        
+        showIndicator();
+        window.addEventListener('resize', showIndicator);
+    </script>
+</body>
+</html>

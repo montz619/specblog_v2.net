@@ -1,0 +1,262 @@
+/* Laptop-specific styles extracted from main style.css */
+
+/* Laptop-specific specs table enhancements */
+.specs-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.specs-table th {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    width: 25%;
+    min-width: 150px;
+}
+
+.specs-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+    line-height: 1.6;
+    color: var(--text-primary);
+    font-weight: 500;
+    vertical-align: top;
+}
+
+.specs-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Only apply hover effects on devices that support true hovering */
+@media (hover: hover) {
+    .specs-table tr:hover {
+        background: #f8f9fa;
+    }
+}
+
+/* Touch-friendly active states for touch devices */
+.specs-table tr:active {
+    background: #f8f9fa;
+    transition: background-color 0.1s ease;
+}
+
+/* Ensure focus states are visible and accessible */
+.specs-table tr:focus {
+    background: #f8f9fa;
+    outline: 2px solid var(--primary-color);
+    outline-offset: -2px;
+}
+
+.specs-table ul {
+    margin: 0;
+    padding-left: 1.2rem;
+}
+
+.specs-table ul li {
+    margin-bottom: 0.5rem;
+}
+
+.specs-table ul li:last-child {
+    margin-bottom: 0;
+}
+
+.specs-table strong {
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+/* Breadcrumb Navigation */
+.breadcrumb {
+    background: var(--bg-primary);
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 2rem;
+}
+
+.breadcrumb ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    font-size: var(--font-size-sm);
+}
+
+.breadcrumb ul li {
+    display: flex;
+    align-items: center;
+    color: var(--text-secondary);
+}
+
+.breadcrumb ul li:not(:last-child)::after {
+    content: '›';
+    margin-left: 0.5rem;
+    color: var(--text-light);
+    font-weight: bold;
+}
+
+.breadcrumb ul li a {
+    color: var(--primary-color);
+    transition: color 0.2s ease;
+}
+
+.breadcrumb ul li a:hover {
+    color: #5a67d8;
+}
+
+/* Gadget Detail Pages */
+#gadget-detail-hero {
+    text-align: center;
+    padding: 3rem 0;
+    margin-bottom: 3rem;
+    background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-tertiary) 100%);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    position: relative;
+}
+
+#gadget-detail-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: var(--border-radius-lg);
+    z-index: 1;
+}
+
+#gadget-detail-hero h2,
+#gadget-detail-hero p {
+    position: relative;
+    z-index: 2;
+}
+
+#gadget-detail-hero h2 {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    color: #ffffff;
+    margin-bottom: 1rem;
+    text-shadow: 0 3px 6px rgba(0,0,0,0.8);
+}
+
+#gadget-detail-hero p {
+    font-size: var(--font-size-lg);
+    color: #ffffff;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+}
+
+#gadget-specs-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+#gadget-specs-content h3 {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.gadget-image-placeholder {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.gadget-image-placeholder img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+}
+
+/* Mobile-specific laptop styles */
+@media (max-width: 768px) {
+    /* Improve table readability on mobile */
+    .specs-table {
+        font-size: var(--font-size-sm);
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .specs-table th {
+        width: 35%;
+        font-size: 0.75rem;
+    }
+    
+    .specs-table th,
+    .specs-table td {
+        padding: 0.75rem 1rem;
+    }
+    
+    .specs-table thead,
+    .specs-table tbody,
+    .specs-table th,
+    .specs-table td,
+    .specs-table tr {
+        display: block;
+    }
+    
+    .specs-table thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    
+    .specs-table tr {
+        border: 1px solid var(--border-color);
+        margin-bottom: 1rem;
+        border-radius: var(--border-radius);
+        background: var(--bg-primary);
+        padding: 1rem;
+    }
+    
+    .specs-table td {
+        border: none;
+        position: relative;
+        padding: 0.5rem 0;
+        white-space: normal;
+        text-align: left;
+    }
+    
+    .specs-table td:before {
+        content: attr(data-label) ": ";
+        font-weight: var(--font-weight-semibold);
+        color: var(--text-primary);
+        display: inline-block;
+        min-width: 120px;
+    }
+    
+    .specs-table th {
+        display: none;
+    }
+    
+    /* Improve breadcrumb on mobile */
+    .breadcrumb ul {
+        font-size: 0.75rem;
+    }
+    
+    /* Gadget detail hero adjustments */
+    #gadget-detail-hero {
+        padding: 2rem 0;
+        margin-bottom: 2rem;
+    }
+}
+
+
